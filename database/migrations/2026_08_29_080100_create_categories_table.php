@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('cat_name', 100)->unique();
             $table->string('description', 255)->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

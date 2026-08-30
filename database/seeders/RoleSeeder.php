@@ -13,7 +13,7 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('roles')->insert([
+        DB::table('roles')->upsert([
             [
                 'role_name' => 'Admin',
                 'description' => 'Administrator role with full access',
@@ -38,6 +38,6 @@ class RoleSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-        ]);
+        ], ['role_name'], ['description', 'updated_at']);
     }
 }

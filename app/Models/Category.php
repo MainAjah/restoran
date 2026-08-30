@@ -10,8 +10,6 @@ class Category extends Model
     protected $fillable = [
         'cat_name',
         'description',
-        'created_at',
-        'updated_at',
     ];
 
     public function items()

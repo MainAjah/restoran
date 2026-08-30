@@ -30,8 +30,7 @@ class UserFactory extends Factory
             'fullname' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(),
-            'role_id' => \App\Models\Role::factory(),
-            
+            'role_id' => \App\Models\Role::inRandomOrder()->value('id') ?? 1,
         ];
     }
 

@@ -9,14 +9,12 @@ class Item extends Model
 {
     use softDeletes, HasFactory;
     protected $fillable = [
-        'name',
-        'description',
-        'price',
+        'item_name',
         'category_id',
         'image',
+        'price',
+        'description',
         'is_available',
-        'created_at',
-        'updated_at',
     ];
     
     protected $dates = ['deleted_at'];
